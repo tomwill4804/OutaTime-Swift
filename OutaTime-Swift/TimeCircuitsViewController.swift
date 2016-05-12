@@ -15,10 +15,12 @@ class TimeCircuitsViewController: UIViewController {
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var destinationTimeLabel: UILabel!
     
+    //
+    //  override set for speed variable
+    //
     var speed : Int = 0 {
         didSet {
             speedLabel.text = String(speed) + " MPH"
-            
         }
     }
     
@@ -26,7 +28,9 @@ class TimeCircuitsViewController: UIViewController {
     var dateFormatter : NSDateFormatter!
     var timer : NSTimer!
 
-    
+    //
+    //  set initial values
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +45,10 @@ class TimeCircuitsViewController: UIViewController {
     // MARK: - Navigation
 
     
+    //
+    //  back from date view
+    //  see if we have a valid date to use
+    //
     @IBAction func unwindDateController(segue:UIStoryboardSegue) {
         
         let tvc = segue.sourceViewController as! DatePickerViewController
@@ -52,16 +60,27 @@ class TimeCircuitsViewController: UIViewController {
     }
     
     
+    //
+    //  travel back button pushed
+    //
+    //  create a timer and start it
+    //
     @IBAction func travelBackClicked(sender: AnyObject) {
         
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1,
                                                     target: self,
-                                                    selector: #selector(self.updateTime),
+                                                    selector: #selector(updateTime),
                                                     userInfo: nil,
                                                     repeats: true)
         
-        
     }
+    
+    
+    //
+    //  timer poped
+    //
+    //  update speed or stop
+    //
     
     func updateTime() {
         

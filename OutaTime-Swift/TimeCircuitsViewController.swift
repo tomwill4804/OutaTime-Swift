@@ -15,8 +15,17 @@ class TimeCircuitsViewController: UIViewController {
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var destinationTimeLabel: UILabel!
     
-    var speed = 0;
+    var speed : Int = 0 {
+        didSet {
+            speedLabel.text = String(speed) + " MPH"
+            
+        }
+    }
+    
+    
     var dateFormatter : NSDateFormatter!
+    var timer : NSTimer!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +53,29 @@ class TimeCircuitsViewController: UIViewController {
     
     
     @IBAction func travelBackClicked(sender: AnyObject) {
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1,
+                                                    target: self,
+                                                    selector: #selector(self.updateTime),
+                                                    userInfo: nil,
+                                                    repeats: true)
+        
+        
+    }
+    
+    func updateTime() {
+        
+        if speed < 88 {
+            speed += 1
+        }
+        else {
+            
+            timer.invalidate()
+            lastTimeLabel.text = currentTimeLabel.text;
+            currentTimeLabel.text = destinationTimeLabel.text;
+            speed = 0;
+            
+        }
         
         
     }

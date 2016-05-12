@@ -122,9 +122,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Atb-Fv-IUq"/>
                     <connections>
-                        <outlet property="currentTimeLabel" destination="sFj-iu-ddb" id="rcV-av-kBv"/>
-                        <outlet property="destinationTimeLabel" destination="MZG-Pv-Rts" id="Fps-4r-XWj"/>
-                        <outlet property="lastTimeLabel" destination="KUb-Ue-yrv" id="Z9o-DO-dJe"/>
+                        <outlet property="currentTimeLabel" destination="EDB-7R-ORk" id="mkG-9g-in4"/>
+                        <outlet property="destinationTimeLabel" destination="9G3-Jw-nUV" id="nPh-Ff-2sN"/>
+                        <outlet property="lastTimeLabel" destination="MZG-Pv-Rts" id="ZCO-Hn-W6c"/>
                         <outlet property="speedLabel" destination="k7t-FG-JFS" id="ElI-bw-epc"/>
                     </connections>
                 </viewController>

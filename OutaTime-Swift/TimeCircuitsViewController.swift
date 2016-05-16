@@ -88,15 +88,11 @@ class TimeCircuitsViewController: UIViewController {
             speed += 1
         }
         else {
-            
             timer.invalidate()
             lastTimeLabel.text = currentTimeLabel.text;
             currentTimeLabel.text = destinationTimeLabel.text;
             speed = 0;
-            
         }
-        
-        
     }
 
 }

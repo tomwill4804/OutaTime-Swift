@@ -10,7 +10,7 @@ import UIKit
 
 class DatePickerViewController: UIViewController {
     
-    var date : NSDate!
+    var date : NSDate?
 
     @IBOutlet weak var datePicker: UIDatePicker!
     

@@ -53,7 +53,7 @@ class TimeCircuitsViewController: UIViewController {
         
         let tvc = segue.sourceViewController as! DatePickerViewController
         if tvc.date != nil {
-           destinationTimeLabel.text = dateFormatter.stringFromDate(tvc.date)
+           destinationTimeLabel.text = dateFormatter.stringFromDate(tvc.date!)
         }
         
         
